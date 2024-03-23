@@ -39,10 +39,10 @@ fn main() {
                     let tx_bytes = hex_decode(tx_hex).unwrap();
 
                     // MAINNET
-                    let ELECTRUM_ENDPOINT: &str = "ssl://electrum.blockstream.info:50001";
+                    //let ELECTRUM_ENDPOINT: &str = "ssl://electrum.blockstream.info:50001";
                     
                     // TESTNET
-                    //let ELECTRUM_ENDPOINT: &str = "ssl://electrum.blockstream.info:60002";
+                    let ELECTRUM_ENDPOINT: &str = "ssl://electrum.blockstream.info:60002";
 
                     
                     let client = Client::new(ELECTRUM_ENDPOINT).unwrap();
