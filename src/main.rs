@@ -51,7 +51,17 @@ fn main() {
                     let txid = client.transaction_broadcast_raw(&tx_bytes);
 
                     // There's a format error with the txid variable
-                    //println!("Transaction broadcasted with TXID: {}", txid);
+                    match txid {
+                        Ok(id) => {
+                            println!("Transaction broadcasted with TXID: {}", id);
+                            return;
+                        },
+                        Err(e) => {
+                            println!("There is an error broadcasting the transaction: {}", e);
+                            return;
+                        }
+                
+                    }
                 },
                 Err(_) => {
                     eprintln!("Error: The first argument is not a valid raw bitcoin transaction.");
